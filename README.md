@@ -10,22 +10,32 @@ Student-Performance-Predictor\
 ├── package.json # React frontend config
 └── README.md<br>
 <br>
-How to run locally\
-Step 1: Clone the Repository\
-git clone https://github.com/mhaidara972/Student-Performance-Predictor.git<br>
-cd Student-Performance-Predictor\
-<br>
-Step 2: Start the Backend<br>
-cd ml-backend<br>
-python3 -m venv venv<br>
-source venv/bin/activate        # macOS/Linux<br>
-venv\Scripts\activate           # Windows<br>
-pip install -r requirements.txt (if not installed already)<br>
-python app.py<br>
-<br>
-This will start the backend at: http://localhost:5000<br>
-<br>
-Step 3: Start the Frontend<br>
-Open a new terminal in the root folder (where package.json is located):<br>
-npm install<br>
-npm start      # Start React app<br>
+How to run locally
+Step 1: Clone the Repository
+```
+git clone https://github.com/mhaidara972/Student-Performance-Predictor.git
+cd Student-Performance-Predictor 
+```
+
+Step 2: Start the Backend
+```
+cd ml-backend
+python3 -m venv venv
+
+# Activate the virtual environment:
+source venv/bin/activate        # macOS/Linux
+venv\Scripts\activate           # Windows
+
+# Install required packages
+pip install flask scikit-learn pandas
+
+# Start the Flask server
+python app.py
+
+#This will start the backend at: http://localhost:5000
+```
+Step 3: Start the Frontend\
+Open a new terminal in the root folder (where package.json is located)
+```
+npm install
+npm start      # Start React app
