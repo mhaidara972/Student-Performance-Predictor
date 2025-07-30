@@ -1,0 +1,25 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import joblib
+import pandas as pd
+
+app = Flask(__name__)
+CORS(app)
+
+model = joblib.load("model.pkl")
+columns = joblib.load("columns.pkl")
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    df = pd.DataFrame([data], columns=columns)
+    prediction = model.predict(df)[0]
+    return jsonify({"prediction": int(prediction)})
+
+@app.route('/features', methods=['GET'])
+def features():
+    importances = model.feature_importances_
+    return jsonify({col: float(val) for col, val in zip(columns, importances)})
+
+if __name__ == '__main__':
+    app.run(debug=True)
