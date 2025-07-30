@@ -10,7 +10,7 @@ Student-Performance-Predictor\
 ├── package.json # React frontend config
 └── README.md<br>
 <br>
-How to run locally
+How to run locally\
 Step 1: Clone the Repository
 ```
 git clone https://github.com/mhaidara972/Student-Performance-Predictor.git
