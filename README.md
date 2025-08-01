@@ -65,7 +65,8 @@ Student-Performance-Predictor\
 *Nkiruka Ibe ([nkirukaibe05@gmail.com](GitHub profile:*
 *Mohamed Haidara ([mhaidar2@umbc.edu](GitHub profile: mhaidara972))*
 
-How to run locally\
+## How to run locally <!--- do not change this line -->
+
 Step 1: Clone the Repository
 ```
 git clone https://github.com/mhaidara972/Student-Performance-Predictor.git
