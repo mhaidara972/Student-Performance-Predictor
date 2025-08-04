@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
 const oneHotGroups = {
   "Marital Status": [
@@ -109,45 +110,64 @@ export default function App() {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Student Graduation Predictor</h1>
-
-      {Object.entries(oneHotGroups).map(([group, options]) => (
-        <div key={group}>
-          <label>{group}: </label>
-          <select onChange={(e) => handleChange(group, e.target.value)} defaultValue="">
-            <option value="" disabled>Select {group}</option>
-            {options.map(({ value, label }) => (
-              <option key={value} value={value}>{label}</option>
-            ))}
-          </select>
-        </div>
-      ))}
-
-      {binaryFields.map(field => (
-        <div key={field}>
-          <label>{field.replace("_1", "").replace(/_/g, ' ')}: </label>
-          <input type="checkbox" onChange={e => handleBinaryChange(field, e.target.checked)} />
-        </div>
-      ))}
-
-      {Object.entries(dropdownRangeFields).map(([field, values]) => (
-        <div key={field}>
-          <label>{field}: </label>
-          <select onChange={(e) => handleRangeChange(field, e.target.value)} defaultValue="">
-            <option value="" disabled>Select a value</option>
-            {values.map(v => (
-              <option key={v} value={v}>{v}</option>
-            ))}
-          </select>
-        </div>
-      ))}
-
-      <button onClick={handleSubmit}>Predict</button>
-
-      {prediction && <h2>Prediction: {prediction}</h2>}
-
+    <div className="app-container">
+      <h1 className="app-title">Student Graduation Predictor</h1>
       
+      <div className="form-container">
+        <div className="form-section">
+          <h2 className="section-title">Personal Information</h2>
+          {Object.entries(oneHotGroups).map(([group, options]) => (
+            <div key={group} className="form-group">
+              <label className="form-label">{group}: </label>
+              <select className="form-select" onChange={(e) => handleChange(group, e.target.value)} defaultValue="">
+                <option value="" disabled>Select {group}</option>
+                {options.map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
+
+        <div className="form-section">
+          <h2 className="section-title">Student Status</h2>
+          {binaryFields.map(field => (
+            <div key={field} className="form-group checkbox-group">
+              <label className="checkbox-label">
+                <input 
+                  type="checkbox" 
+                  className="form-checkbox"
+                  onChange={e => handleBinaryChange(field, e.target.checked)} 
+                />
+                {field.replace("_1", "").replace(/_/g, ' ')}
+              </label>
+            </div>
+          ))}
+        </div>
+
+        <div className="form-section">
+          <h2 className="section-title">Academic Performance</h2>
+          {Object.entries(dropdownRangeFields).map(([field, values]) => (
+            <div key={field} className="form-group">
+              <label className="form-label">{field}: </label>
+              <select className="form-select" onChange={(e) => handleRangeChange(field, e.target.value)} defaultValue="">
+                <option value="" disabled>Select a value</option>
+                {values.map(v => (
+                  <option key={v} value={v}>{v}</option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
+
+        <button className="predict-button" onClick={handleSubmit}>Predict Student Outcome</button>
+
+        {prediction && (
+          <div className={`prediction-result ${prediction.toLowerCase()}`}>
+            <h2>Prediction: {prediction}</h2>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
