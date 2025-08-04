@@ -102,12 +102,18 @@ export default function App() {
     setForm({ ...form, [field]: parseFloat(value) });
   };
 
+  const [confidence, setConfidence] = useState(null);
+
   const handleSubmit = async () => {
-    const res = await axios.post("http://localhost:5000/predict", form);
-    setPrediction(["Dropout", "Graduate"][res.data.prediction]);
-    const feats = await axios.get("http://localhost:5000/features");
-    setFeatures(feats.data);
+  const res = await axios.post("http://localhost:5000/predict", form);
+  setPrediction(["Dropout", "Graduate"][res.data.prediction]);
+  setConfidence(res.data.confidence);
+
+  const feats = await axios.get("http://localhost:5000/features");
   };
+
+  
+  
 
   return (
     <div className="app-container">
