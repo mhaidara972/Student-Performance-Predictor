@@ -169,10 +169,14 @@ export default function App() {
         <button className="predict-button" onClick={handleSubmit}>Predict Student Outcome</button>
 
         {prediction && (
-          <div className={`prediction-result ${prediction.toLowerCase()}`}>
-            <h2>Prediction: {prediction}</h2>
-          </div>
-        )}
+  <div className={`prediction-result ${prediction.toLowerCase()}`}>
+    <h2>Prediction: {prediction}</h2>
+    {confidence !== null && (
+      <p>Confidence: {(confidence * 100).toFixed(2)}%</p>
+    )}
+  </div>
+)}
+
       </div>
     </div>
   );
