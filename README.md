@@ -13,12 +13,12 @@ Student-Performance-Predictor\
 *The purpose behind our project is to answer our research question which is “How can we use student information on their weekly study hours, demographics, class attendance, extracurricular activities to predict their performance?” Technologies used include Python, Pandas, scikit-learn, XGBoost, React, Flask, JavaScript, HTML, CSS.*
 
 
-## Problem Statement <!--- do not change this line -->
+## Problem Statement 
 
 *The pandemic has still affected many students until now. We see a decline in reading and writing abilities of students. As a result, many students are struggling with classes and are scoring low grades. We want to view the future grades of students to help prevent failed grades and future dropouts at a college level. Understanding what factors impact student success can help students improve their habits. Students can use this model when determining their academic schedule and involvement. Teachers can use this model in classrooms to assess the learning levels of their students.*
 
 
-## Key Results <!--- do not change this line -->
+## Key Results 
 
 1. *Built a machine learning pipeline to predict student academic outcomes using real-world educational data.*
 2. *Preprocessed over 30 columns by cleaning missing values, mapping target labels, removing duplicates, and encoding categorical variables using one-hot encoding.*
@@ -27,7 +27,7 @@ Student-Performance-Predictor\
 
 
 
-## Methodologies <!--- do not change this line -->
+## Methodologies 
 
 
 
@@ -36,14 +36,15 @@ Student-Performance-Predictor\
 *To accomplish this, we first researched and selected a dataset that records over 4,400 student records, containing academic, demographic, and behavioral features. We processed and analyzed the data using pandas to display graphs and detect patterns throughout the data. We then utilized the XGBoost to train the machine learning model to 91% accuracy. The model was then used to create a user interface that allows users to predict academic results.*
 
 
-## Data Sources <!--- do not change this line -->
+## Data Sources 
 *Predict Students’ Dropout: https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success*
 
 *Kaggle Data Set: https://www.kaggle.com/code/adilshamim8/student-success-analysis/input*
 
+## Google Colab Link 
+[Predict Students’ Dropout: https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success*](https://colab.research.google.com/drive/1-K3Z85C3w3njMiP9WV0tJ1LLkIOyoA74?usp=chrome_ntp#scrollTo=EnFHuytN6eKq)
 
-
-## Technologies Used <!--- do not change this line -->
+## Technologies Used 
 
 *Python*\
 *Pandas*\
@@ -57,7 +58,7 @@ Student-Performance-Predictor\
 
 
 
-## Authors <!--- do not change this line -->
+## Authors 
 *This project was completed in collaboration with:*
 
 *Julian Alvarado ([jalvarado@colgate.edu](GitHub profile: Julian1321))*
@@ -65,7 +66,7 @@ Student-Performance-Predictor\
 *Nkiruka Ibe ([nkirukaibe05@gmail.com](GitHub profile:*
 *Mohamed Haidara ([mhaidar2@umbc.edu](GitHub profile: mhaidara972))*
 
-## How to run locally <!--- do not change this line -->
+## How to run locally 
 
 Step 1: Clone the Repository
 ```
